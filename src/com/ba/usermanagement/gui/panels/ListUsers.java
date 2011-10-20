@@ -13,17 +13,14 @@ package com.ba.usermanagement.gui.panels;
 import com.ba.usermanagement.UserTableModel;
 import com.ba.usermanagement.gui.dialogs.UserData;
 import com.fsaravia.utilities.GUIMensajes;
+import com.fsaravia.utilities.Miscelaneos;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
 import com.ib.HBCore.exceptions.ValidationException;
-import com.ib.modeloTabla.ConvierteAVector;
 import com.ib.modeloTabla.Modelo;
 import com.ib.modeloTabla.TableSorter;
 import java.awt.event.KeyEvent;
-import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,7 +55,6 @@ public class ListUsers extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -77,21 +73,16 @@ public class ListUsers extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma 18", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Usuarios del Sistema");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 5, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         add(jLabel1, gridBagConstraints);
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Buscar", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 12))); // NOI18N
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma 14", 1, 12)); // NOI18N
-        jLabel2.setText("Buscar:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 3);
-        jPanel1.add(jLabel2, gridBagConstraints);
-
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Nombre de Usuario:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -100,6 +91,7 @@ public class ListUsers extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 3);
         jPanel1.add(jLabel3, gridBagConstraints);
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Apellidos:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -108,6 +100,7 @@ public class ListUsers extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(3, 10, 3, 3);
         jPanel1.add(jLabel4, gridBagConstraints);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Nombres:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -116,6 +109,11 @@ public class ListUsers extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(jLabel5, gridBagConstraints);
 
+        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField1FocusGained(evt);
+            }
+        });
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField1KeyPressed(evt);
@@ -131,6 +129,11 @@ public class ListUsers extends javax.swing.JPanel {
         jPanel1.add(jTextField1, gridBagConstraints);
 
         jTextField2.setPreferredSize(new java.awt.Dimension(120, 20));
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField2FocusGained(evt);
+            }
+        });
         jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField2KeyPressed(evt);
@@ -144,6 +147,11 @@ public class ListUsers extends javax.swing.JPanel {
         jPanel1.add(jTextField2, gridBagConstraints);
 
         jTextField3.setPreferredSize(new java.awt.Dimension(120, 20));
+        jTextField3.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField3FocusGained(evt);
+            }
+        });
         jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTextField3KeyPressed(evt);
@@ -157,6 +165,7 @@ public class ListUsers extends javax.swing.JPanel {
         jPanel1.add(jTextField3, gridBagConstraints);
 
         jButton1.setText("Buscar");
+        jButton1.setPreferredSize(new java.awt.Dimension(75, 23));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -169,6 +178,7 @@ public class ListUsers extends javax.swing.JPanel {
         jPanel1.add(jButton1, gridBagConstraints);
 
         jButton2.setText("Buscar");
+        jButton2.setPreferredSize(new java.awt.Dimension(75, 23));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -187,9 +197,9 @@ public class ListUsers extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         jPanel1.add(jButton3, gridBagConstraints);
@@ -200,7 +210,7 @@ public class ListUsers extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         add(jPanel1, gridBagConstraints);
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(490, 220));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(850, 300));
 
         jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -213,7 +223,7 @@ public class ListUsers extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         add(jScrollPane1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -231,7 +241,7 @@ public class ListUsers extends javax.swing.JPanel {
         });
         jPanel2.add(jButton4);
 
-        jButton5.setText("Editar usuario");
+        jButton5.setText("Ver/Editar usuario");
         jButton5.setPreferredSize(new java.awt.Dimension(150, 23));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,6 +253,7 @@ public class ListUsers extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         add(jPanel2, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -289,6 +300,18 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
     editUser();
 }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
+        Miscelaneos.seleccionarCampo(evt);
+    }//GEN-LAST:event_jTextField1FocusGained
+
+    private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
+        Miscelaneos.seleccionarCampo(evt);
+    }//GEN-LAST:event_jTextField2FocusGained
+
+    private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
+        Miscelaneos.seleccionarCampo(evt);
+    }//GEN-LAST:event_jTextField3FocusGained
 
     private void findByUsername() {
         try {
@@ -394,7 +417,6 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

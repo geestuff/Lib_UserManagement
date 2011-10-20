@@ -18,6 +18,8 @@ import com.ib.HBCore.exceptions.ValidationException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComponent;
 import javax.swing.JRootPane;
 import javax.swing.KeyStroke;
@@ -236,7 +238,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         String username = jTextField1.getText();
         String encriptedPassword = Encriptar.encriptarIrreversible(new String(jPasswordField1.getPassword()));
         try {
-            User loggedUser = controller.validarUsuario(username, encriptedPassword);
+            User loggedUser = controller.validateUser(username, encriptedPassword);
             if (loggedUser != null) {
                 if (loggedUser.getActive()) {
                     this.usuario = loggedUser;
@@ -263,7 +265,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 //            u.setNombres("Administrador");
 //            u.setUsername("admin");
 //            controller.saveOrUpdate(u, null);
-//            controller.cambiarPassword(u, Encriptar.encriptarIrreversible("admin"));
+//            controller.changePassword(u, Encriptar.encriptarIrreversible("admin"));
 //        } catch (Exception ex) {
 //            Logger.getLogger(UserLogin.class.getName()).log(Level.SEVERE, null, ex);
 //        }

@@ -253,14 +253,14 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                     continuar = true;
                 } else {
                     String passwordActual = Encriptar.encriptarIrreversible(new String(jPasswordField1.getPassword()));
-                    continuar = controller.validarPassword(user, passwordActual);
+                    continuar = controller.validatePassword(user, passwordActual);
                 }
             }
             if (continuar) {
                 String passwordUno = Encriptar.encriptarIrreversible(new String(jPasswordField2.getPassword()));
                 String passwordDos = Encriptar.encriptarIrreversible(new String(jPasswordField3.getPassword()));
                 if (passwordUno.equals(passwordDos)) {
-                    controller.cambiarPassword(user, passwordUno);
+                    controller.changePassword(user, passwordUno);
                     this.dispose();
                 } else {
                     throw new ValidationException("Las contraseñas ingresadas no coinciden");

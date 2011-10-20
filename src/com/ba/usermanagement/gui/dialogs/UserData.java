@@ -353,7 +353,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             if (jTextField1.getText().equals("") || jTextField1.getText().equals("")) {
                 throw new ValidationException("Ingrese el nombre y apellido del usuario");
             }
-            userController.generarUsername(this.user);
+            userController.generateUsername(this.user);
             jTextField9.setText(this.user.getUsername());
         } catch (Exception e) {
             GUIMensajes.mostrarErrorReportar(this, e);
