@@ -12,6 +12,7 @@ package com.ba.usermanagement.gui.dialogs;
 
 import com.fsaravia.utilities.Encriptar;
 import com.fsaravia.utilities.GUIMensajes;
+import com.ib.HBCore.controllers.CoreController;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
 import com.ib.HBCore.exceptions.ValidationException;
@@ -30,7 +31,7 @@ import javax.swing.KeyStroke;
  */
 public class UserLogin extends javax.swing.JDialog {
 
-    private User usuario = null;
+//    private User usuario = null;
     private final UserController controller = new UserController();
     private final boolean avoidLogin = false;
 
@@ -45,11 +46,11 @@ public class UserLogin extends javax.swing.JDialog {
 //        }
     }
 
-    public static User login(javax.swing.JFrame parent) {
+    public static void login(javax.swing.JFrame parent) {
         UserLogin userLogin = new UserLogin(parent);
         userLogin.setLocationRelativeTo(parent);
         userLogin.setVisible(true);
-        return userLogin.usuario;
+//        return userLogin.usuario;
     }
 
     @Override
@@ -241,7 +242,8 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             User loggedUser = controller.validateUser(username, encriptedPassword);
             if (loggedUser != null) {
                 if (loggedUser.getActive()) {
-                    this.usuario = loggedUser;
+//                    this.usuario = loggedUser;
+                    CoreController.loggedUser = loggedUser;
                     this.setVisible(false);
                 } else {
                     throw new ValidationException("Cuenta desactivada");

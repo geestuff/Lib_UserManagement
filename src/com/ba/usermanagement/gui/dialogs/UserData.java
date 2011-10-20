@@ -364,7 +364,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         try {
             this.user.setAdministrador(jRadioButton3.isSelected());
             this.user.setActive(this.jRadioButton5.isSelected());
-            userController.saveOrUpdate(user, null);
+            userController.saveOrUpdate(user);
             if (this.newUser) {
                 setPassword();
             }
