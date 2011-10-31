@@ -19,8 +19,8 @@ import com.ib.HBCore.exceptions.ValidationException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JRootPane;
 import javax.swing.KeyStroke;
@@ -34,23 +34,19 @@ public class UserLogin extends javax.swing.JDialog {
 //    private User usuario = null;
     private final UserController controller = new UserController();
     private final boolean avoidLogin = false;
+    private final Icon icon;
 
     /** Creates new form UserLogin */
-    private UserLogin(javax.swing.JFrame parent) {
+    private UserLogin(javax.swing.JFrame parent,Icon icon) {
         super(parent, true);
+        this.icon = icon;
         initComponents();
-//        if (avoidLogin) {
-//            jTextField1.setText("fsaravia");
-//            jPasswordField1.setText("sapito");
-//            login();
-//        }
     }
 
-    public static void login(javax.swing.JFrame parent) {
-        UserLogin userLogin = new UserLogin(parent);
+    public static void login(javax.swing.JFrame parent,Icon icon) {
+        UserLogin userLogin = new UserLogin(parent,icon);
         userLogin.setLocationRelativeTo(parent);
         userLogin.setVisible(true);
-//        return userLogin.usuario;
     }
 
     @Override
@@ -81,6 +77,7 @@ public class UserLogin extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -105,30 +102,31 @@ public class UserLogin extends javax.swing.JDialog {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         getContentPane().add(jPanel1, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("INGRESE SU NOMBRE DE USUARIO Y CONTRASEÑA:");
+        jLabel3.setText("Ingrese su nombre de usuario y contraseña:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         getContentPane().add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24));
         jLabel4.setText("Bienvenido");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         getContentPane().add(jLabel4, gridBagConstraints);
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel1.setText("Nombre de Usuario:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -137,6 +135,7 @@ public class UserLogin extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 2, 2);
         jPanel2.add(jLabel1, gridBagConstraints);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
         jLabel2.setText("Contraseña:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -183,9 +182,14 @@ public class UserLogin extends javax.swing.JDialog {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         getContentPane().add(jPanel2, gridBagConstraints);
+
+        jLabel5.setIcon(getIcon());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        getContentPane().add(jLabel5, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -279,9 +283,17 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the icon
+     */
+    public Icon getIcon() {
+        return icon;
+    }
 }
