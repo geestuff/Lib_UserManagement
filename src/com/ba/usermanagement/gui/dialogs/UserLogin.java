@@ -37,14 +37,14 @@ public class UserLogin extends javax.swing.JDialog {
     private final Icon icon;
 
     /** Creates new form UserLogin */
-    private UserLogin(javax.swing.JFrame parent,Icon icon) {
+    private UserLogin(javax.swing.JFrame parent, Icon icon) {
         super(parent, true);
         this.icon = icon;
         initComponents();
     }
 
-    public static void login(javax.swing.JFrame parent,Icon icon) {
-        UserLogin userLogin = new UserLogin(parent,icon);
+    public static void login(javax.swing.JFrame parent, Icon icon) {
+        UserLogin userLogin = new UserLogin(parent, icon);
         userLogin.setLocationRelativeTo(parent);
         userLogin.setVisible(true);
     }
@@ -211,7 +211,7 @@ private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST
 }//GEN-LAST:event_jPasswordField1KeyPressed
 
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    dispose();
+    cancel();
 }//GEN-LAST:event_jButton2ActionPerformed
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -230,7 +230,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                dispose();
+                cancel();
             }
         };
         KeyStroke stroke = KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0);
@@ -239,14 +239,13 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         return rp;
     }
 
-    public void login() {
+    private void login() {
         String username = jTextField1.getText();
         String encriptedPassword = Encriptar.encriptarIrreversible(new String(jPasswordField1.getPassword()));
         try {
             User loggedUser = controller.validateUser(username, encriptedPassword);
             if (loggedUser != null) {
                 if (loggedUser.getActive()) {
-//                    this.usuario = loggedUser;
                     CoreController.loggedUser = loggedUser;
                     this.setVisible(false);
                 } else {
@@ -261,6 +260,13 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
     }
 
+    private void cancel() {
+        if (CoreController.loggedUser == null) {//No user has logged in.. close the app
+            System.exit(0);
+        }else{
+            dispose();
+        }
+    }
 //    private void createAdminUser() {
 //        try {
 //            Logger.getLogger(UserLogin.class.getName()).log(Level.INFO, "Creating admin user");
