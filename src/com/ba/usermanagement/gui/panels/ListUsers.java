@@ -334,8 +334,8 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 throw new ValidationException("Ingrese el apellido o el nombre o parte de los mismos");
             }
             User example = new User();
-            example.setApellidos(jTextField2.getText() + "%");
-            example.setNombres(jTextField3.getText() + "%");
+            example.setLastName(jTextField2.getText() + "%");
+            example.setName(jTextField3.getText() + "%");
             List<User> usersList = controller.findMany(example);
             showUsers(usersList);
             lastSearch = LAST_SEARCH_NAME;

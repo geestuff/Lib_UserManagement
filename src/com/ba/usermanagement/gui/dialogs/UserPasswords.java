@@ -54,7 +54,7 @@ public class UserPasswords extends javax.swing.JDialog {
 
         }
         User loggedUser = null;//TODO: NECESITO EL USUARIO.. ARMAMOS UN FRAMEWORK CON JNI Y FSCONTEXT?
-        if (loggedUser == null || loggedUser.isAdministrador()) {
+        if (loggedUser == null || loggedUser.isAdministrator()) {
             jLabel1.setVisible(false);
             jPasswordField1.setVisible(false);
         }
@@ -249,7 +249,7 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                 continuar = true;
             } else {
                 User usuarioLogueado = null;//TODO: NECESITO EL USUARIO.. POR QUE DOS VECES?
-                if (usuarioLogueado == null || usuarioLogueado.isAdministrador()) {
+                if (usuarioLogueado == null || usuarioLogueado.isAdministrator()) {
                     continuar = true;
                 } else {
                     String passwordActual = Encriptar.encriptarIrreversible(new String(jPasswordField1.getPassword()));

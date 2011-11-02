@@ -46,7 +46,7 @@ public class UserTableModel implements ConvierteAVector {
         titulos.add("Nombre");
         titulos.add("Apellido");
         titulos.add("Último acceso");
-        titulos.add("Administrador?");
+//        titulos.add("Administrador?");
         return titulos;
     }
 
@@ -54,10 +54,10 @@ public class UserTableModel implements ConvierteAVector {
     public List<Object> getDatos() {
         List<Object> data = new ArrayList<Object>();
         data.add(user.getUsername());
-        data.add(user.getNombres());
-        data.add(user.getApellidos());
-        data.add(DateFormat.getDateInstance().format(user.getUltimoAcceso().getTime()));
-        data.add(user.getAdministrador().booleanValue());
+        data.add(user.getName());
+        data.add(user.getLastName());
+        data.add(DateFormat.getDateInstance().format(user.getLastAccess().getTime()));
+//        data.add(user.isAdministrator());
         return data;
 
     }
