@@ -318,9 +318,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             if (jTextField1.getText() == null || jTextField1.getText().equals("")) {
                 throw new ValidationException("Ingrese un nombre de usuario o parte del mismo");
             }
-            User example = new User();
-            example.setUsername(jTextField1.getText() + "%");
-            List<User> setUsuarios = controller.findMany(example);
+            List<User> setUsuarios = controller.findByUserName(jTextField1.getText());
             showUsers(setUsuarios);
             lastSearch = LAST_SEARCH_USERNAME;
         } catch (Exception e) {
@@ -333,10 +331,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
             if ((jTextField2.getText() == null || jTextField2.getText().equals("")) && (jTextField3.getText() == null || jTextField3.getText().equals(""))) {
                 throw new ValidationException("Ingrese el apellido o el nombre o parte de los mismos");
             }
-            User example = new User();
-            example.setLastName(jTextField2.getText() + "%");
-            example.setName(jTextField3.getText() + "%");
-            List<User> usersList = controller.findMany(example);
+            List<User> usersList = controller.findByName(jTextField3.getText(),jTextField2.getText());
             showUsers(usersList);
             lastSearch = LAST_SEARCH_NAME;
         } catch (Exception e) {
@@ -346,9 +341,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void fetchAll() {
         try {
-            User example = new User();
-            example.setActive(Boolean.TRUE);
-            List<User> usersList = controller.findMany(example);
+            List<User> usersList = controller.fetchAll();
             showUsers(usersList);
             lastSearch = LAST_SEARCH_ALL;
         } catch (Exception ex) {
