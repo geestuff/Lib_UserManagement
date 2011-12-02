@@ -20,7 +20,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JRootPane;
 import javax.swing.KeyStroke;
@@ -39,6 +38,7 @@ public class UserLogin extends javax.swing.JDialog {
     /** Creates new form UserLogin */
     private UserLogin(javax.swing.JFrame parent, Icon icon) {
         super(parent, true);
+//        createAdminUser();
         this.icon = icon;
         initComponents();
     }
@@ -80,6 +80,8 @@ public class UserLogin extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setResizable(false);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Ingresar");
@@ -272,11 +274,11 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 //            Logger.getLogger(UserLogin.class.getName()).log(Level.INFO, "Creating admin user");
 //            User u = new User();
 //            u.setActive(Boolean.TRUE);
-//            u.setAdministrador(Boolean.TRUE);
-//            u.setApellidos("Administrador");
-//            u.setNombres("Administrador");
+//            u.setAdministrator(Boolean.TRUE);
+//            u.setLastName("Administrador");
+//            u.setName("Administrador");
 //            u.setUsername("admin");
-//            controller.saveOrUpdate(u, null);
+//            controller.saveOrUpdate(u);
 //            controller.changePassword(u, Encriptar.encriptarIrreversible("admin"));
 //        } catch (Exception ex) {
 //            Logger.getLogger(UserLogin.class.getName()).log(Level.SEVERE, null, ex);
