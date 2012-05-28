@@ -66,15 +66,14 @@ public class UserData extends javax.swing.JDialog {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
-        jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
-        jTextField9 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jTextField9 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -82,17 +81,10 @@ public class UserData extends javax.swing.JDialog {
         jButton4 = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        jLabel2.setText("Apellidos:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(3, 0, 3, 3);
-        getContentPane().add(jLabel2, gridBagConstraints);
 
         jLabel10.setText("Nombre de Usuario:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -102,24 +94,9 @@ public class UserData extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 3, 3);
         getContentPane().add(jLabel10, gridBagConstraints);
 
-        jTextField2.setPreferredSize(new java.awt.Dimension(200, 20));
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${user.lastName}"), jTextField2, org.jdesktop.beansbinding.BeanProperty.create("text"));
-        bindingGroup.addBinding(binding);
-
-        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField2FocusGained(evt);
-            }
-        });
-        jPanel2.add(jTextField2);
-
-        jLabel1.setText("Nombres:");
-        jPanel2.add(jLabel1);
-
         jTextField1.setPreferredSize(new java.awt.Dimension(200, 20));
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${user.name}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${user.name}"), jTextField1, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -129,11 +106,34 @@ public class UserData extends javax.swing.JDialog {
         });
         jPanel2.add(jTextField1);
 
+        jLabel2.setText("Apellidos:");
+        jPanel2.add(jLabel2);
+
+        jTextField2.setPreferredSize(new java.awt.Dimension(200, 20));
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${user.lastName}"), jTextField2, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
+
+        jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField2FocusGained(evt);
+            }
+        });
+        jPanel2.add(jTextField2);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         getContentPane().add(jPanel2, gridBagConstraints);
+
+        jButton3.setText("Generar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel8.add(jButton3);
 
         jTextField9.setPreferredSize(new java.awt.Dimension(200, 20));
 
@@ -147,14 +147,6 @@ public class UserData extends javax.swing.JDialog {
         });
         jPanel8.add(jTextField9);
 
-        jButton3.setText("Generar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel8.add(jButton3);
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -162,7 +154,7 @@ public class UserData extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         getContentPane().add(jPanel8, gridBagConstraints);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Usuarios del Sistema");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = 2;
@@ -236,6 +228,14 @@ public class UserData extends javax.swing.JDialog {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         getContentPane().add(jCheckBox2, gridBagConstraints);
+
+        jLabel1.setText("Nombres:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        getContentPane().add(jLabel1, gridBagConstraints);
 
         bindingGroup.bind();
 

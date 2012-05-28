@@ -79,9 +79,14 @@ public class UserLogin extends javax.swing.JDialog {
         jPasswordField1 = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setAlwaysOnTop(true);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Ingresar");
@@ -220,6 +225,10 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     login();
 }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        cancel();
+    }//GEN-LAST:event_formWindowClosing
+
     private void enter(java.awt.event.KeyEvent evt) {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             login();
@@ -271,7 +280,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
 //    private void createAdminUser() {
 //        try {
-//            Logger.getLogger(UserLogin.class.getName()).log(Level.INFO, "Creating admin user");
+//            java.util.logging.Logger.getLogger(UserLogin.class.getName()).log(java.util.logging.Level.INFO, "Creating admin user");
 //            User u = new User();
 //            u.setActive(Boolean.TRUE);
 //            u.setAdministrator(Boolean.TRUE);
@@ -281,7 +290,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 //            controller.saveOrUpdate(u);
 //            controller.changePassword(u, Encriptar.encriptarIrreversible("admin"));
 //        } catch (Exception ex) {
-//            Logger.getLogger(UserLogin.class.getName()).log(Level.SEVERE, null, ex);
+////            java.util.logging.Logger.getLogger(UserLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
 //        }
 //    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
