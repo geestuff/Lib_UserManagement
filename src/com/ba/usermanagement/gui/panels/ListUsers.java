@@ -14,6 +14,7 @@ import com.ba.usermanagement.UserTableModel;
 import com.ba.usermanagement.gui.dialogs.UserData;
 import com.fsaravia.utilities.GUIMensajes;
 import com.fsaravia.utilities.Miscelaneos;
+import com.ib.HBCore.application.ApplicationModuleDescriber;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
 import com.ib.HBCore.exceptions.ValidationException;
@@ -30,7 +31,7 @@ import javax.swing.JFrame;
  *
  * @author Federico Saravia
  */
-public class ListUsers extends javax.swing.JPanel {
+public class ListUsers extends com.ba.usermanagement.gui.permissions.UserPermissionsEnabledJPanel {
 
     private final UserController controller = new UserController();
     private static final int LAST_SEARCH_USERNAME = 1;
@@ -39,7 +40,8 @@ public class ListUsers extends javax.swing.JPanel {
     private int lastSearch = -1;
 
     /** Creates new form ListUsers */
-    public ListUsers() {
+    public ListUsers() throws Exception{
+        super();
         initComponents();
     }
 
@@ -422,4 +424,9 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public ApplicationModuleDescriber getDescriber() {
+        return com.ba.usermanagement.modules.Modules.USER_LIST;
+    }
 }
