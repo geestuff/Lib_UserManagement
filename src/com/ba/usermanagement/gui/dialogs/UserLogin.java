@@ -272,11 +272,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }
 
     private void cancel() {
-        if (CoreController.loggedUser == null) {//No user has logged in.. close the app
-            System.exit(0);
-        }else{
             dispose();
-        }
     }
 //    private void createAdminUser() {
 //        try {

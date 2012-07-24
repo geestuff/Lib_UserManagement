@@ -32,7 +32,8 @@ public class UserControl {
             LIBRARIES = new Properties();
             try {
                 LIBRARIES.load(is);
-            } catch (IOException iOException) {
+                new UserControl().getModuleDescribers();//Init describers
+            } catch (Exception iOException) {
                 LIBRARIES.clear();
                 Logger.getLogger(CoreController.class.getName()).log(Level.SEVERE, "Unable to load config file", iOException);
             }
