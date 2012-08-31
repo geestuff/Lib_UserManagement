@@ -10,8 +10,9 @@
  */
 package com.ba.usermanagement.gui.dialogs;
 
+import com.ba.swingapphelper.gui.GUICommons;
+import com.ba.swingapphelper.gui.GUIMensajes;
 import com.fsaravia.utilities.Encriptar;
-import com.fsaravia.utilities.GUIMensajes;
 import com.ib.HBCore.controllers.CoreController;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
@@ -202,7 +203,7 @@ public class UserLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
 private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-    com.fsaravia.utilities.Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jTextField1FocusGained
 
 private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
@@ -210,7 +211,7 @@ private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:eve
 }//GEN-LAST:event_jTextField1KeyPressed
 
 private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
-    com.fsaravia.utilities.Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jPasswordField1FocusGained
 
 private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed

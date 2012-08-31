@@ -10,8 +10,9 @@
  */
 package com.ba.usermanagement.gui.dialogs;
 
+import com.ba.swingapphelper.gui.GUICommons;
 import com.fsaravia.utilities.Encriptar;
-import com.fsaravia.utilities.GUIMensajes;
+import com.ba.swingapphelper.gui.GUIMensajes;
 import com.ib.HBCore.controllers.CoreController;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
@@ -205,15 +206,15 @@ public class UserPasswords extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
 private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
-    com.fsaravia.utilities.Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jPasswordField1FocusGained
 
 private void jPasswordField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField2FocusGained
-    com.fsaravia.utilities.Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jPasswordField2FocusGained
 
 private void jPasswordField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField3FocusGained
-    com.fsaravia.utilities.Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jPasswordField3FocusGained
 
 private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked

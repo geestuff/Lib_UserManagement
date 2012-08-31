@@ -10,8 +10,8 @@
  */
 package com.ba.usermanagement.gui.dialogs;
 
-import com.fsaravia.utilities.GUIMensajes;
-import com.fsaravia.utilities.Miscelaneos;
+import com.ba.swingapphelper.gui.GUICommons;
+import com.ba.swingapphelper.gui.GUIMensajes;
 import com.ib.HBCore.application.ApplicationModuleDescriber;
 import com.ib.HBCore.controllers.CoreController;
 import com.ib.HBCore.controllers.UserController;
@@ -254,15 +254,15 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
     }// </editor-fold>//GEN-END:initComponents
 
 private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
-    Miscelaneos.seleccionarCampo(evt);
+    GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jTextField2FocusGained
 
 private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-    Miscelaneos.seleccionarCampo(evt);
+    GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jTextField1FocusGained
 
 private void jTextField9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField9FocusGained
-    Miscelaneos.seleccionarCampo(evt);
+    GUICommons.seleccionarCampo(evt);
 }//GEN-LAST:event_jTextField9FocusGained
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

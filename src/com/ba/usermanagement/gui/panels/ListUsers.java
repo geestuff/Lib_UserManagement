@@ -10,10 +10,11 @@
  */
 package com.ba.usermanagement.gui.panels;
 
+import com.ba.swingapphelper.gui.GUICommons;
 import com.ba.usermanagement.UserTableModel;
 import com.ba.usermanagement.gui.dialogs.UserData;
-import com.fsaravia.utilities.GUIMensajes;
-import com.fsaravia.utilities.Miscelaneos;
+import com.ba.swingapphelper.gui.GUIMensajes;
+
 import com.ib.HBCore.application.ApplicationModuleDescriber;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
@@ -304,15 +305,15 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
     }//GEN-LAST:event_jTextField1FocusGained
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
-        Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
     }//GEN-LAST:event_jTextField2FocusGained
 
     private void jTextField3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField3FocusGained
-        Miscelaneos.seleccionarCampo(evt);
+        GUICommons.seleccionarCampo(evt);
     }//GEN-LAST:event_jTextField3FocusGained
 
     private void findByUsername() {
