@@ -27,7 +27,7 @@ public class UserControl {
     private static final Properties LIBRARIES;
 
     static {
-        InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream("Modules.properties");
+        InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("Modules.properties");
         if (is != null) {
             LIBRARIES = new Properties();
             try {
@@ -60,7 +60,7 @@ public class UserControl {
             for (Enumeration<Object> it = allLibraries.keys(); it.hasMoreElements();) {
                 String groupId = it.nextElement().toString();//GroupId is the key of the .properties file
                 String property = allLibraries.getProperty(groupId);
-                InputStream tempIS = ClassLoader.getSystemClassLoader().getResourceAsStream(property);
+                InputStream tempIS = Thread.currentThread().getContextClassLoader().getResourceAsStream(property);
                 if (tempIS != null) {
                     try {
                         Properties oneLibrary = new Properties();
