@@ -10,7 +10,10 @@ import com.ib.HBCore.application.ApplicationModuleDescriber;
 import com.ib.HBCore.entities.User;
 import com.ib.HBCore.entities.UserPermission;
 import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -174,13 +177,21 @@ public class UserPermissions extends com.ba.usermanagement.gui.permissions.UserP
     }
 
     private JPanel fillJPanel(List<ApplicationModuleDescriber> moduleList) {
-        GridLayout layout = new GridLayout(moduleList.size(), 2, 3, 3);
+        GridBagLayout layout = new GridBagLayout();
         JPanel jPanel = new JPanel(layout);
         jPanel.setName(modulePanelName);
+        GridBagConstraints gbc = new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(3, 3, 3, 3), 0, 0);
+        int verticalIndex = 0;
         for (Iterator<ApplicationModuleDescriber> it = moduleList.iterator(); it.hasNext();) {
             ApplicationModuleDescriber module = it.next();
-            jPanel.add(new JLabel(module.getModuleName()));
-            jPanel.add(createPermissionPanel(module));
+            gbc.gridy = verticalIndex;
+            gbc.gridx = 0;
+            gbc.anchor = GridBagConstraints.WEST;
+            verticalIndex++;
+            jPanel.add(new JLabel(module.getModuleName()),gbc);
+            gbc.gridx = 1;
+            gbc.anchor = GridBagConstraints.EAST;
+            jPanel.add(createPermissionPanel(module),gbc);
         }
         return jPanel;
     }
