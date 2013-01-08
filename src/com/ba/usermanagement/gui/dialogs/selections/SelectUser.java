@@ -10,8 +10,8 @@
  */
 package com.ba.usermanagement.gui.dialogs.selections;
 
-import com.ba.usermanagement.UserTableModel;
 import com.ba.swingapphelper.gui.GUIMensajes;
+import com.ba.usermanagement.UserTableModel;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
 import com.ib.HBCore.exceptions.ValidationException;

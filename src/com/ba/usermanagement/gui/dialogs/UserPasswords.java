@@ -11,8 +11,8 @@
 package com.ba.usermanagement.gui.dialogs;
 
 import com.ba.swingapphelper.gui.GUICommons;
-import com.fsaravia.utilities.Encriptar;
 import com.ba.swingapphelper.gui.GUIMensajes;
+import com.fsaravia.utilities.Encriptar;
 import com.ib.HBCore.controllers.CoreController;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;

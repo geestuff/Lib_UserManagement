@@ -4,8 +4,8 @@
  */
 package com.ba.usermanagement.gui.dialogs;
 
-import com.ba.usermanagement.permissions.UserControl;
 import com.ba.swingapphelper.gui.GUIMensajes;
+import com.ba.usermanagement.permissions.UserControl;
 import com.ib.HBCore.application.ApplicationModuleDescriber;
 import com.ib.HBCore.entities.User;
 import com.ib.HBCore.entities.UserPermission;

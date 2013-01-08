@@ -11,10 +11,9 @@
 package com.ba.usermanagement.gui.panels;
 
 import com.ba.swingapphelper.gui.GUICommons;
+import com.ba.swingapphelper.gui.GUIMensajes;
 import com.ba.usermanagement.UserTableModel;
 import com.ba.usermanagement.gui.dialogs.UserData;
-import com.ba.swingapphelper.gui.GUIMensajes;
-
 import com.ib.HBCore.application.ApplicationModuleDescriber;
 import com.ib.HBCore.controllers.UserController;
 import com.ib.HBCore.entities.User;
