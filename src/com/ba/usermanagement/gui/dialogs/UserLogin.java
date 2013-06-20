@@ -93,7 +93,7 @@ public class UserLogin extends javax.swing.JDialog {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Ingresar");
-        jButton1.setPreferredSize(new java.awt.Dimension(150, 23));
+        jButton1.setPreferredSize(new java.awt.Dimension(150, 29));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -102,7 +102,7 @@ public class UserLogin extends javax.swing.JDialog {
         jPanel1.add(jButton1);
 
         jButton2.setText("Cancelar");
-        jButton2.setPreferredSize(new java.awt.Dimension(150, 23));
+        jButton2.setPreferredSize(new java.awt.Dimension(150, 29));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -116,7 +116,7 @@ public class UserLogin extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         getContentPane().add(jPanel1, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel3.setFont(jLabel3.getFont());
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Ingrese su nombre de usuario y contraseña:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -126,7 +126,7 @@ public class UserLogin extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         getContentPane().add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24));
+        jLabel4.setFont(jLabel4.getFont().deriveFont((float)24));
         jLabel4.setText("Bienvenido");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -136,7 +136,7 @@ public class UserLogin extends javax.swing.JDialog {
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel1.setFont(jLabel1.getFont());
         jLabel1.setText("Nombre de Usuario:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -145,7 +145,7 @@ public class UserLogin extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 2, 2);
         jPanel2.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12));
+        jLabel2.setFont(jLabel2.getFont());
         jLabel2.setText("Contraseña:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
