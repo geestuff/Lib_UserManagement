@@ -204,7 +204,7 @@ public class UserPermissions extends com.ba.usermanagement.gui.permissions.UserP
     }
 
     private JComboBox createPermissionsCombo(ApplicationModuleDescriber module) {
-        JComboBox jComboBox = new JComboBox(UserPermission.Permission.values());
+        JComboBox<UserPermission.Permission> jComboBox = new JComboBox<>(UserPermission.Permission.values());
         for(Iterator<UserPermission> iterator = this.user.getPermissions().iterator();iterator.hasNext();){
             UserPermission next = iterator.next();
             if(next.getModuleId() == module.getFullModuleId()){
