@@ -84,11 +84,11 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         jButton5 = new javax.swing.JButton();
         jCheckBox2 = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("Nombre de Usuario:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -109,7 +109,6 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         });
         jPanel2.add(jTextField1);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Apellidos:");
         jPanel2.add(jLabel2);
 
@@ -158,7 +157,7 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 0, 0);
         getContentPane().add(jPanel8, gridBagConstraints);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         jLabel13.setText("Datos del usuario");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = 2;
@@ -168,28 +167,29 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         jPanel10.setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Guardar");
-        jButton1.setPreferredSize(new java.awt.Dimension(150, 23));
+        jButton1.setPreferredSize(new java.awt.Dimension(190, 29));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 1, 1);
         jPanel10.add(jButton1, gridBagConstraints);
 
         jButton2.setText("Cancelar");
-        jButton2.setPreferredSize(new java.awt.Dimension(150, 23));
+        jButton2.setPreferredSize(new java.awt.Dimension(190, 29));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        gridBagConstraints.insets = new java.awt.Insets(3, 1, 1, 3);
         jPanel10.add(jButton2, gridBagConstraints);
 
         jButton4.setText("Establecer contraseña");
+        jButton4.setPreferredSize(new java.awt.Dimension(190, 29));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -199,10 +199,11 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        gridBagConstraints.insets = new java.awt.Insets(1, 3, 3, 1);
         jPanel10.add(jButton4, gridBagConstraints);
 
         jButton5.setText("Permisos de acceso");
+        jButton5.setPreferredSize(new java.awt.Dimension(190, 29));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -212,16 +213,15 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        gridBagConstraints.insets = new java.awt.Insets(1, 1, 3, 3);
         jPanel10.add(jButton5, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         getContentPane().add(jPanel10, gridBagConstraints);
 
-        jCheckBox2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jCheckBox2.setText("Administrador del sistema");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${user.administrator}"), jCheckBox2, org.jdesktop.beansbinding.BeanProperty.create("selected"));
@@ -239,7 +239,6 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         getContentPane().add(jCheckBox2, gridBagConstraints);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Nombres:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -247,6 +246,18 @@ public class UserData extends com.ba.usermanagement.gui.permissions.UserPermissi
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
         getContentPane().add(jLabel1, gridBagConstraints);
+
+        jCheckBox1.setText("Cuenta activa");
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${user.active}"), jCheckBox1, org.jdesktop.beansbinding.BeanProperty.create("selected"));
+        bindingGroup.addBinding(binding);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LAST_LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(3, 3, 3, 3);
+        getContentPane().add(jCheckBox1, gridBagConstraints);
 
         bindingGroup.bind();
 
@@ -309,6 +320,7 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
