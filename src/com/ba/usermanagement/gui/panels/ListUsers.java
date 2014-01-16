@@ -352,7 +352,7 @@ private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 
     private void fetchAll() {
         try {
-            List<User> usersList = controller.fetchAll();
+            List<User> usersList = controller.fetchAll(!jCheckBox1.isSelected());
             showUsers(usersList);
             lastSearch = LAST_SEARCH_ALL;
         } catch (Exception ex) {
